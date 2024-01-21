@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+<h1>Dashbord</h1>
+<form method="post">
+    {% csrf_token %}
+    
+    <a class="btn btn-primary btn-lg" href="{% url 'addblog' %}" role="button">Add New Blog +</a>
+    
+</form>
+
+<table class="table table-bordered border-dark ">
+    <thead>
+    <tr>
+
+    <td>id  </td>
+    <td> title </td>
+    <td>Desc</td>
+    <td>Update/Delete</td>
+    
+</tr>
+<tbody>
+{% for i in form %}
+<tr>
+    <td>{{i.id}}</td>
+    <td>{{i.title}}</td>
+    <td>{{i.desc}}</td>
+    <td><a class="btn btn-primary btn-lg"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" href="{% url 'updateblog' i.id %}" role="button">Update Blog</a>
+    
+        {% if perms.blogmng.delete_blog  %}
+    <form action="{% url 'deleteblog' i.id %}" method="post" style="display: inline;">
+        {% csrf_token %}
+    <input type="submit" class="btn btn-danger btn-lg" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"  role="button" value="Delete Blog">
+   {% endif %}
+   </td>
+</form>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+  {% endblock content %}

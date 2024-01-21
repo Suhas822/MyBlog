@@ -1,0 +1,60 @@
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
+}
+
+.list-item:hover {
+  background-color: #e0e0e0;
+}
+
+.chip-container {
+  margin-top: 10px;
+}
+
+.chip {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.remove-icon {
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.remove-icon:hover {
+  color: #c0392b;
+}

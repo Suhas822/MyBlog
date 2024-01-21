@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <h1 class="text-center">Register Page</h1>
+        {% if messages %}
+        {% for i in messages %}
+        {{i}}
+        {% endfor %}
+        {% endif %}
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {% for f in form %}
+            <div class="form-group">
+              {{ f.label_tag }}{{ f }}{{ f.errors|striptags }}
+            </div>
+          {% endfor %}<br>
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <a href="{% url 'login' %}">Login</a>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

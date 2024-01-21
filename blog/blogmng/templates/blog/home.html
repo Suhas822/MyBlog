@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<h1 class="text-Black bg-White my-5 ">home </h1>
+          
+       {% for i in form %}
+            <h2 class=" text-Black bg-White my-5 border border-primary ">
+                <div class="jumbotron">
+                    <h1 class="display-8">Title : {{i.title}}  </h1>
+                
+                    <hr class="my-1 ">
+                    <p class="bg-secondary-subtle">Description: {{i.desc}}</p>
+                    
+                  </div>
+            </h2>
+        {% endfor %}
+          
+          
+          {% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container"></div>
+<div class="row justify-content-center ">
+    <div class="col-sm-6">
+    <form method="post" novalidate>
+          <h1>Login page </h1>
+          {% for i in form %}
+          {% csrf_token %}
+          <div class="form-group">
+          {{i.label_tag}}{{i}}
+        </div>   
+          {% endfor %}<br>
+          <input class="btn btn-primary " type="submit" value="Submit">
+          <a href="{% url 'signup' %}">Register</a>
+    </form>
+          </div>
+          </div>
+        </div>
+          {% endblock content %}
